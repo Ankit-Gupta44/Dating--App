@@ -15,6 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useRoute} from '@react-navigation/native';
 import axios from 'axios';
 import {StackActions} from '@react-navigation/native';
+import { apiUrl } from '../Sceret';
 
 const PromptsScreen = () => {
   const route = useRoute();
@@ -60,7 +61,7 @@ const PromptsScreen = () => {
   const registerUser = async userData => {
     try {
       const response = await axios
-        .post('http://192.168.118.110:8000/register', userData)
+        .post(`${apiUrl}/register`, userData)
         .then(response => {
           console.log(response);
           const token = response.data.token;

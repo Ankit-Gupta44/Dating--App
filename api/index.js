@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
+const { Mongo } = require('./Sceret2');
 
 const app = express();
 const port = 8000;
@@ -20,7 +21,7 @@ app.use(express.json());
 const jwt = require('jsonwebtoken');
 
 mongoose
-  .connect('')
+  .connect(`${Mongo}`)
   .then(() => {
     console.log('Connected to MongoDB');
   })

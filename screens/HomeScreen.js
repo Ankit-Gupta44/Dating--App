@@ -19,6 +19,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {jwtDecode} from 'jwt-decode';
 import axios from 'axios';
+import { apiUrl } from '../Sceret';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -363,7 +364,7 @@ const HomeScreen = () => {
   const fetchMatches = async () => {
     try {
       const response = await axios.get(
-        `http://192.168.118.110:8000/matches?userId=${userId}`,
+        `${apiUrl}/matches?userId=${userId}`,
       );
       const matches = response.data.matches;
       setProfilesData(matches);

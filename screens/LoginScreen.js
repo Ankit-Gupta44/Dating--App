@@ -17,6 +17,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { AuthContext } from '../AuthContext';
+import { apiUrl } from '../Sceret';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -47,7 +48,7 @@ const LoginScreen = () => {
           email: email,
           password: password,
         };
-        const response = await axios.post('http://192.168.118.110:8000/login', user);
+        const response = await axios.post(`${apiUrl}/login`, user);
         console.log('Dfdfd');
         const token = response.data.token;
         
@@ -71,7 +72,7 @@ const LoginScreen = () => {
       email: email,
       password: password,
     };
-    axios.post('http://192.168.118.110:8000/login', user).then(response => {
+    axios.post(`${apiUrl}/login`, user).then(response => {
       console.log(response);
       const token = response.data.token;
       AsyncStorage.setItem('auth', token);

@@ -16,6 +16,14 @@ import {
   saveRegistrationProgress,
 } from '../registrationUtils';
 
+
+// Import variables from Scret.js
+import { apiKey } from '../Sceret';
+
+
+
+
+
 const LocationScreen = () => {
   const navigation = useNavigation();
   const [region, setRegion] = useState({
@@ -44,7 +52,7 @@ const LocationScreen = () => {
         setRegion({...region, latitude, longitude});
         // Use reverse geocoding to get the location name from latitude and longitude
         fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`,
         )
           .then(response => response.json())
           .then(data => {
@@ -68,7 +76,7 @@ const LocationScreen = () => {
         setRegion({...region, latitude, longitude});
         // Update the location text
         fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyA_S8hgzrRrU_IcpmsNfN3AF3_AByKCm60`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`,
         )
           .then(response => response.json())
           .then(data => {
@@ -85,7 +93,7 @@ const LocationScreen = () => {
   const handleMarkerDragEnd = coordinate => {
     // Use reverse geocoding to get the location name from latitude and longitude
     fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinate.latitude},${coordinate.longitude}&key=AIzaSyA_S8hgzrRrU_IcpmsNfN3AF3_AByKCm60`,
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinate.latitude},${coordinate.longitude}&key=${apiKey}`,
     )
       .then(response => response.json())
       .then(data => {

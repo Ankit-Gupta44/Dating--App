@@ -15,6 +15,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {io} from 'socket.io-client';
 import axios from 'axios';
+import { apiUrl } from '../Sceret';
 
 const ChatRoom = () => {
   const [message, setMessage] = useState('');
@@ -69,7 +70,7 @@ const ChatRoom = () => {
       const senderId = route?.params?.senderId;
       const receiverId = route?.params?.receiverId;
 
-      const response = await axios.get('http://192.168.118.110:8000/messages', {
+      const response = await axios.get(`${apiUrl}/messages`, {
         params: {senderId, receiverId},
       });
 

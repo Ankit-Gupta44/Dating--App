@@ -6,6 +6,7 @@ import {jwtDecode} from 'jwt-decode';
 import 'core-js/stable/atob';
 import UserChat from '../components/UserChat';
 import { useFocusEffect } from '@react-navigation/native';
+import { apiUrl } from '../Sceret';
 
 const ChatScreen = () => {
   const [matches, setMatches] = useState([]);
@@ -24,7 +25,7 @@ const ChatScreen = () => {
   const fetchMatches = async () => {
     try {
       const response = await axios.get(
-        `http://192.168.118.110:8000/get-matches/${userId}`,
+        `${apiUrl}/get-matches/${userId}`,
       );
       setMatches(response.data.matches);
     } catch (error) {

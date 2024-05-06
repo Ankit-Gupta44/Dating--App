@@ -11,6 +11,7 @@ import {useRoute} from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
 import axios from 'axios';
 import { AuthContext } from '../AuthContext';
+import { apiUrl } from '../Sceret';
 
 const PreFinalScreen = () => {
   const navigation = useNavigation();
@@ -95,7 +96,7 @@ const PreFinalScreen = () => {
     try {
       console.log('INSIDE');
       const response = await axios
-        .post('http://192.168.118.110:8000/register', userData)
+        .post(`${apiUrl}/register`, userData)
         .then(response => {
           console.log(response);
           const token = response.data.token;

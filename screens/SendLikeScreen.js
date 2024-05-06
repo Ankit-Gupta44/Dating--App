@@ -12,6 +12,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PreFinalScreen from './PreFinalScreen';
 import axios from 'axios';
+import { apiUrl } from '../Sceret';
 
 const SendLikeScreen = () => {
   const route = useRoute();
@@ -21,7 +22,7 @@ const SendLikeScreen = () => {
   console.log(route.params?.userId);
   const likeProfile = async () => {
     try {
-      const response = await axios.post('http://192.168.118.110:8000/like-profile', {
+      const response = await axios.post(`${apiUrl}/like-profile`, {
         userId: route.params.userId,
         likedUserId: route.params.likedUserId,
         image: route?.params?.image,
