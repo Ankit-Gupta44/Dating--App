@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = 3000;
+const port = 8000;
 const cors = require('cors');
 
 const http = require('http').createServer(app);
@@ -20,7 +20,7 @@ app.use(express.json());
 const jwt = require('jsonwebtoken');
 
 mongoose
-  .connect('mongodb+srv://sujan:sujan@cluster0.8gyy8sg.mongodb.net/')
+  .connect('mongodb+srv://Hinge:Hinge@cluster0.00ess7y.mongodb.net/')
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -52,10 +52,26 @@ const generateToken = user => {
   return token;
 };
 
+app.get('/homee',async (req, res) => {
+  try {
+    // Extract user data from the request body
+    // Return the new user data along with the token
+    console.log('app hit api111111111');
+    const ankit = {key:2};
+
+    res.status(201).json(ankit);
+  } catch (error) {
+    console.error('Error creating user:', error);
+    res.status(500).json({error: 'Internal Server Error'});
+  }
+});
+
 // Backend Route to Create User and Generate Token
 app.post('/register', async (req, res) => {
   try {
+    console.log('app hit api');
     // Extract user data from the request body
+
     const userData = req.body;
 
     // Create a new user using the User model
@@ -68,6 +84,7 @@ app.post('/register', async (req, res) => {
     // Generate a token for the new user (you may use JWT or any other token generation mechanism)
     const token = jwt.sign({userId: newUser._id}, secretKey, {expiresIn: '1d'});
     // Return the new user data along with the token
+    
     res.status(201).json({token});
   } catch (error) {
     console.error('Error creating user:', error);
@@ -319,7 +336,7 @@ io.on('connection', socket => {
   });
 });
 
-http.listen(8000, () => {
+http.listen(3000, () => {
   console.log('Socket.IO server running on port 8000');
 });
 

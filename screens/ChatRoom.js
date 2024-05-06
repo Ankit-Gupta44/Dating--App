@@ -69,7 +69,7 @@ const ChatRoom = () => {
       const senderId = route?.params?.senderId;
       const receiverId = route?.params?.receiverId;
 
-      const response = await axios.get('http://localhost:3000/messages', {
+      const response = await axios.get('http://192.168.118.110:8000/messages', {
         params: {senderId, receiverId},
       });
 

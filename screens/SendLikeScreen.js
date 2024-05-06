@@ -21,7 +21,7 @@ const SendLikeScreen = () => {
   console.log(route.params?.userId);
   const likeProfile = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/like-profile', {
+      const response = await axios.post('http://192.168.118.110:8000/like-profile', {
         userId: route.params.userId,
         likedUserId: route.params.likedUserId,
         image: route?.params?.image,

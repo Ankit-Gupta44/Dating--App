@@ -60,7 +60,7 @@ const PromptsScreen = () => {
   const registerUser = async userData => {
     try {
       const response = await axios
-        .post('http://localhost:3000/register', userData)
+        .post('http://192.168.118.110:8000/register', userData)
         .then(response => {
           console.log(response);
           const token = response.data.token;

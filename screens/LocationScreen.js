@@ -44,7 +44,7 @@ const LocationScreen = () => {
         setRegion({...region, latitude, longitude});
         // Use reverse geocoding to get the location name from latitude and longitude
         fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyDJqEKwV49K0ycxK_os6f9ZgKuv6pJHINA`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyA_S8hgzrRrU_IcpmsNfN3AF3_AByKCm60`,
         )
           .then(response => response.json())
           .then(data => {
@@ -55,8 +55,8 @@ const LocationScreen = () => {
           })
           .catch(error => console.error('Error fetching location:', error));
       },
-      error => console.error('Error getting location:', error),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000},
+      error => console.error('Error getting location111:', error),
+      {enableHighAccuracy: false, timeout: 20000, maximumAge: 1000},
     );
   }, []);
 
@@ -68,7 +68,7 @@ const LocationScreen = () => {
         setRegion({...region, latitude, longitude});
         // Update the location text
         fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyDJqEKwV49K0ycxK_os6f9ZgKuv6pJHINA`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyA_S8hgzrRrU_IcpmsNfN3AF3_AByKCm60`,
         )
           .then(response => response.json())
           .then(data => {
@@ -85,7 +85,7 @@ const LocationScreen = () => {
   const handleMarkerDragEnd = coordinate => {
     // Use reverse geocoding to get the location name from latitude and longitude
     fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinate.latitude},${coordinate.longitude}&key=AIzaSyDJqEKwV49K0ycxK_os6f9ZgKuv6pJHINA`,
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinate.latitude},${coordinate.longitude}&key=AIzaSyA_S8hgzrRrU_IcpmsNfN3AF3_AByKCm60`,
     )
       .then(response => response.json())
       .then(data => {
@@ -109,7 +109,7 @@ const LocationScreen = () => {
           setLocation(formattedAddress);
         }
       })
-      .catch(error => console.error('Error fetching location:', error));
+      .catch(error => console.error('Error fetching location222:', error));
   };
 
   const handleNext = () => {

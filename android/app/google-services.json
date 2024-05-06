@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "830076004433",
+    "project_id": "hinge-dating-app",
+    "storage_bucket": "hinge-dating-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830076004433:android:64e5205018df16e3f3f070",
+        "android_client_info": {
+          "package_name": "com.hingeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNidZOwvjsdlaKKFYSL5Fq80rIlDlnGqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

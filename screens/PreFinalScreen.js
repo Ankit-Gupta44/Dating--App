@@ -93,8 +93,9 @@ const PreFinalScreen = () => {
   };
   const registerUser = async () => {
     try {
+      console.log('INSIDE');
       const response = await axios
-        .post('http://localhost:3000/register', userData)
+        .post('http://192.168.118.110:8000/register', userData)
         .then(response => {
           console.log(response);
           const token = response.data.token;
@@ -111,7 +112,7 @@ const PreFinalScreen = () => {
 
         clearAllScreenData();
     } catch (error) {
-      console.error('Error registering user:', error);
+      console.error('Error registering user: OUTSIDE', error);
       throw error; // Throw the error for handling in the component
     }
   };

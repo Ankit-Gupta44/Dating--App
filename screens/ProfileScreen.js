@@ -58,7 +58,7 @@ const ProfileScreen = () => {
   const getUserDetails = async () => {
     try {
       // Make a GET request to the endpoint with the userId parameter
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
+      const response = await axios.get(`http://192.168.118.110:8000/users/${userId}`);
 
       // Check if the response contains the user data
       if (response.status === 200) {

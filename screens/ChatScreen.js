@@ -24,7 +24,7 @@ const ChatScreen = () => {
   const fetchMatches = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/get-matches/${userId}`,
+        `http://192.168.118.110:8000/get-matches/${userId}`,
       );
       setMatches(response.data.matches);
     } catch (error) {

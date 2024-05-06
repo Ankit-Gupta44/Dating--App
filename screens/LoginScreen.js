@@ -47,7 +47,7 @@ const LoginScreen = () => {
           email: email,
           password: password,
         };
-        const response = await axios.post('http://localhost:3000/login', user);
+        const response = await axios.post('http://192.168.118.110:8000/login', user);
         console.log('Dfdfd');
         const token = response.data.token;
         
@@ -71,7 +71,7 @@ const LoginScreen = () => {
       email: email,
       password: password,
     };
-    axios.post('http://localhost:3000/login', user).then(response => {
+    axios.post('http://192.168.118.110:8000/login', user).then(response => {
       console.log(response);
       const token = response.data.token;
       AsyncStorage.setItem('auth', token);
