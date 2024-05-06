@@ -20,7 +20,7 @@ app.use(express.json());
 const jwt = require('jsonwebtoken');
 
 mongoose
-  .connect('mongodb+srv://Hinge:Hinge@cluster0.00ess7y.mongodb.net/')
+  .connect('')
   .then(() => {
     console.log('Connected to MongoDB');
   })
