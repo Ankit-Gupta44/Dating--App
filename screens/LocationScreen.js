@@ -44,7 +44,7 @@ const LocationScreen = () => {
         setRegion({...region, latitude, longitude});
         // Use reverse geocoding to get the location name from latitude and longitude
         fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyA_S8hgzrRrU_IcpmsNfN3AF3_AByKCm60`,
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=`,
         )
           .then(response => response.json())
           .then(data => {
